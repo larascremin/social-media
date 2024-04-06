@@ -11,6 +11,7 @@ function Forms(props) {
           type={props.tipo}
           id={props.nome}
           name={props.nome}
+          className="login-forms"
           required
         ></input>
       </form>

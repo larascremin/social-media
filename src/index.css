@@ -54,3 +54,10 @@ a:hover {
 a:hover:after {
   background-color: #26569e;
 }
+
+.top-decoration {
+  height: 40px;
+  background-color: #26569e;
+  position: absolute;
+  width: 100%;
+}

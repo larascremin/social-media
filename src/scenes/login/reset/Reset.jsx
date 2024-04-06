@@ -7,7 +7,8 @@ function Reset() {
       <div className="reset-container rect">
         <h2>Redefinir</h2>
         <p>
-          Esqueceu sua senha? Enviaremos uma código de verificação para você:
+          Esqueceu sua senha? Enviaremos uma código de verificação. Depois faça{" "}
+          <a href="/">Login</a>.
         </p>
         <Forms nome="email" label="Insira seu e-mail:" tipo="email" />
 

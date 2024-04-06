@@ -7,7 +7,7 @@ function Sign() {
       <div className="sign-container rect">
         <h2>Sign In</h2>
         <p>
-          Já tem uma conta? Acesse agora clicando em <a href="#login">Log In</a>
+          Já tem uma conta? Acesse agora clicando em <a href="/">Log In</a>
         </p>
         <Forms nome="user" label="Nome de Usuário:" tipo="text" />
         <Forms nome="email" label="E-mail:" tipo="email" />

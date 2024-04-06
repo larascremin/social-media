@@ -1,0 +1,46 @@
+.feed-top {
+  height: 40px;
+  background-color: #26569e;
+}
+
+.side-bar {
+  background-color: #f4f4f4;
+  width: 260px;
+  height: 100vh;
+  padding: 60px 40px 0px;
+  box-shadow: 2px 2px 20px rgba(0, 0, 20, 0.4);
+  position: fixed;
+  top: 0;
+}
+
+.profile-pic {
+  width: auto;
+  height: 160px;
+  margin: 20px 0px 10px;
+}
+
+.header-side-bar {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.line {
+  height: 3px;
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  margin: 30px 0px;
+}
+
+.bar-buttons {
+  margin: 30px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.bar-buttons img {
+  width: auto;
+  height: 30px;
+}

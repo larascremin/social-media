@@ -1,0 +1,29 @@
+.feed {
+  margin-left: 340px;
+  padding: 60px 140px;
+}
+
+.new-post {
+  background-color: #f4f4f4;
+  border-radius: 40px;
+  padding: 40px;
+}
+
+.new-post-top {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.new-post-top img {
+  height: 60px;
+  width: auto;
+}
+
+.input-post {
+  width: 200%;
+  background-color: #e0e0e0;
+  border-radius: 20px;
+  border: none;
+  padding: 22px;
+}
