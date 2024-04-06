@@ -1,6 +1,6 @@
 .feed {
   margin-left: 340px;
-  padding: 60px 140px;
+  padding: 60px 160px;
 }
 
 .new-post {
@@ -17,13 +17,46 @@
 
 .new-post-top img {
   height: 60px;
-  width: auto;
+}
+
+.new-post-top form {
+  width: 100%;
 }
 
 .input-post {
-  width: 200%;
   background-color: #e0e0e0;
-  border-radius: 20px;
   border: none;
-  padding: 22px;
+  width: 100%;
+  font-family: inherit;
+  padding: 20px;
+  border-radius: 20px;
+  box-sizing: border-box;
+}
+
+.new-post-bottom {
+  display: flex;
+  justify-content: right;
+  gap: 20px;
+  align-items: center;
+  margin-top: -10px;
+}
+
+.adicionar {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  color: #9f9f9f;
+  gap: 4px;
+  padding: 8px 20px;
+  border-radius: 20px;
+}
+
+.adicionar:hover {
+  background-color: #e0e0e0;
+}
+
+.postar {
+  height: 40px;
+  border-radius: 20px;
+  background-color: #739ebe;
 }
