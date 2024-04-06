@@ -1,0 +1,17 @@
+.top-decoration {
+  height: 40px;
+  background-color: #26569e;
+  position: absolute;
+  width: 100%;
+}
+
+.login-container {
+  margin: 0px 100px;
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.login-container img {
+  height: 100vh;
+}
