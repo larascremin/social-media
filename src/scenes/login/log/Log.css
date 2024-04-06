@@ -2,31 +2,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
 
-.log-container {
-  border: 3px solid #6f6f6f;
-  border-radius: 40px;
-  padding: 40px;
+  max-width: 560px;
 }
 
 .log-container p {
   margin-bottom: 40px;
 }
 
-button {
-  background-color: #191b1a;
-  color: #f4f4f4;
-  padding: 12px 26px;
-  border: none;
-  border-radius: 60px;
-  font-weight: bold;
-  font-size: 0.9rem;
-  cursor: pointer;
-  margin-top: 20px;
-  transition: 0.3s;
+.forgot-password {
+  color: #6f6f6f;
+  margin-top: -10px;
 }
 
-button:hover {
-  background-color: #26569e;
+.forgot-password a::after {
+  background-color: #6f6f6f;
 }

@@ -1,0 +1,11 @@
+.sign {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  max-width: 560px;
+}
+
+.sign-container p {
+  margin-bottom: 40px;
+}

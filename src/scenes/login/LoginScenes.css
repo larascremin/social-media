@@ -15,3 +15,26 @@
 .login-container img {
   height: 100vh;
 }
+
+button {
+  background-color: #191b1a;
+  color: #f4f4f4;
+  padding: 12px 26px;
+  border: none;
+  border-radius: 60px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #26569e;
+}
+
+.rect {
+  border: 3px solid #6f6f6f;
+  border-radius: 40px;
+  padding: 40px;
+}
