@@ -15,23 +15,23 @@ function SideBar() {
         <p>@laraScremin</p>
       </div>
       <div className="line"></div>
-      <div className="bar-buttons ">
+      <a href="/" className="bar-buttons ">
         <img src={FeedIcon} />
         <p>Feed</p>
-      </div>
-      <div className="bar-buttons">
+      </a>
+      <a href="/" className="bar-buttons">
         <img src={ProfileIcon} />
-        <p>Profile</p>
-      </div>
-      <div className="bar-buttons">
+        <p>Perfil</p>
+      </a>
+      <a href="/" className="bar-buttons">
         <img src={SupportIcon} />
-        <p>Support</p>
-      </div>
+        <p>Suporte</p>
+      </a>
       <div className="line"></div>
-      <div className="bar-buttons">
+      <a href="/" className="bar-buttons">
         <img src={LogoutIcon} />
-        <p>Log Out</p>
-      </div>
+        <p>Sair</p>
+      </a>
     </div>
   );
 }

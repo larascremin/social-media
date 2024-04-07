@@ -1,5 +1,6 @@
 import SideBar from "./SideBar";
 import NewPost from "./NewPost";
+import Post from "./Post";
 
 function FeedScenes() {
   return (
@@ -8,6 +9,7 @@ function FeedScenes() {
       <SideBar />
       <div className="feed">
         <NewPost />
+        <Post />
       </div>
     </>
   );
