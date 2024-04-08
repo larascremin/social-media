@@ -1,0 +1,14 @@
+.profile-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.profile-input {
+  background-color: #e0e0e0;
+  font-family: inherit;
+  border: none;
+  border-radius: 10px;
+  margin: 10px 0px 30px;
+  padding: 10px;
+}

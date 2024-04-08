@@ -19,7 +19,7 @@ function SideBar() {
         <img src={FeedIcon} />
         <p>Feed</p>
       </a>
-      <a href="/" className="bar-buttons">
+      <a href="/profile" className="bar-buttons">
         <img src={ProfileIcon} />
         <p>Perfil</p>
       </a>

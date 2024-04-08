@@ -1,7 +1,7 @@
 import "./Post.css";
-import { Publicacoes } from "./Data";
+import { Publicacoes } from "../Data";
 import React, { useState } from "react";
-import LikeIcon from "../../assets/like-icon.svg";
+import LikeIcon from "../../../assets/like-icon.svg";
 
 function Post(props) {
   const [clicado, setClicado] = useState(false);
