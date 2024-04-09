@@ -1,21 +1,21 @@
 import React from "react";
 import "./Forms.css";
 
-function Forms(props) {
+function Forms({ nome, label, tipo, value, onChange }) {
   return (
-    <>
-      <form action="/" method="POST">
-        <label htmlFor={props.nome}>{props.label}</label>
-        <br />
-        <input
-          type={props.tipo}
-          id={props.nome}
-          name={props.nome}
-          className="login-forms"
-          required
-        ></input>
-      </form>
-    </>
+    <div>
+      <label htmlFor={nome}>{label}</label>
+      <br />
+      <input
+        type={tipo}
+        id={nome}
+        name={nome}
+        value={value}
+        onChange={onChange}
+        className="login-forms"
+        required
+      />
+    </div>
   );
 }
 

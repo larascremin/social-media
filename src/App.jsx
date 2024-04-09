@@ -1,13 +1,25 @@
 import { useState } from "react";
 import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import LoginScenes from "./scenes/login/LoginScenes";
-import FeedScenes from "./scenes/feed/FeedScenes";
+import Log from "./scenes/login/log/Log";
+import Sign from "./scenes/login/sign/Sign";
+import Reset from "./scenes/login/reset/Reset";
+import NewPost from "./scenes/feed/posts/NewPost";
+import Profile from "./scenes/feed/profile/Profile";
 
 function App() {
   return (
     <>
-      <FeedScenes />
+      <Router>
+        <Routes>
+          <Route path="/" element={<Log />} />
+          <Route path="sign" element={<Sign />} />
+          <Route path="reset" element={<Reset />} />
+          <Route path="feed" element={<NewPost />} />
+          <Route path="profile" element={<Profile />} />
+        </Routes>
+      </Router>
     </>
   );
 }
