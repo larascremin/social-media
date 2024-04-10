@@ -49,6 +49,9 @@ function Log() {
         <div className="log">
           <div className="log-container rect">
             <h2>Log In</h2>
+            <p>
+              Não tem uma conta ainda? Clique em <a href="/sign">Sign In</a>
+            </p>
             {!isLoggedIn && (
               <form onSubmit={handleSubmit}>
                 {error && <div className="error">{error}</div>}
@@ -66,13 +69,10 @@ function Log() {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
-                <button type="submit">LOGAR</button>
-                <p>
-                  Não tem uma conta ainda? Clique em <a href="/sign">Sign In</a>
-                </p>
                 <p className="forgot-password">
                   Esqueceu a senha? Clique em <a href="/reset">Resetar</a>
                 </p>
+                <button type="submit">LOGAR</button>
               </form>
             )}
             {isLoggedIn && <div>Você está logado.</div>}

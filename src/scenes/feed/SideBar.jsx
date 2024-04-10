@@ -15,15 +15,15 @@ function SideBar() {
         <p>@laraScremin</p>
       </div>
       <div className="line"></div>
-      <a href="/" className="bar-buttons ">
+      <a href="feed" className="bar-buttons ">
         <img src={FeedIcon} />
         <p>Feed</p>
       </a>
-      <a href="/profile" className="bar-buttons">
+      <a href="profile" className="bar-buttons">
         <img src={ProfileIcon} />
         <p>Perfil</p>
       </a>
-      <a href="/" className="bar-buttons">
+      <a href="support" className="bar-buttons">
         <img src={SupportIcon} />
         <p>Suporte</p>
       </a>

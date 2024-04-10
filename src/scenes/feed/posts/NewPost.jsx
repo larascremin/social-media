@@ -30,8 +30,8 @@ function NewPost() {
             <button className="postar">POSTAR</button>
           </div>
         </div>
+        <Post />
       </div>
-      <Post />
     </>
   );
 }
