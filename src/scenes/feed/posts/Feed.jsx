@@ -1,4 +1,4 @@
-import "./NewPost.css";
+import "./Feed.css";
 import NewPostPic from "../../../assets/profile.png";
 import UploadIcon from "../../../assets/upload-icon.svg";
 import Post from "./Post";
@@ -6,7 +6,7 @@ import Forms from "../../login/Forms";
 import SideBar from "../SideBar";
 import "../SideBar.css";
 
-function NewPost() {
+function Feed() {
   return (
     <>
       <div className="feed-top"></div>
@@ -36,4 +36,4 @@ function NewPost() {
   );
 }
 
-export default NewPost;
+export default Feed;

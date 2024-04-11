@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Log from "./scenes/login/log/Log";
 import Sign from "./scenes/login/sign/Sign";
 import Reset from "./scenes/login/reset/Reset";
-import NewPost from "./scenes/feed/posts/NewPost";
+import Feed from "./scenes/feed/posts/Feed";
 import Profile from "./scenes/feed/profile/Profile";
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
           <Route path="/" element={<Log />} />
           <Route path="sign" element={<Sign />} />
           <Route path="reset" element={<Reset />} />
-          <Route path="feed" element={<NewPost />} />
+          <Route path="feed" element={<Feed />} />
           <Route path="profile" element={<Profile />} />
         </Routes>
       </Router>
