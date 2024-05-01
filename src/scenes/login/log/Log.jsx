@@ -1,44 +1,84 @@
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Log.css";
 import Forms from "../Forms";
 import "../LoginScenes.css";
-
+import * as yup from "yup";
+import { useDispatch } from "react-redux";
+import { setLogin } from "../../../state";
 import Decoration from "../../../assets/decoration.png";
+import { useCookies } from "react-cookie";
+
+const loginSchema = yup.object().shape({
+  email: yup.string().email("E-mail inválido").required("E-mail é obrigatório"),
+  password: yup.string().required("Senha é obrigatória"),
+});
 
 function Log() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [cookies, setCookie, removeCookie] = useCookies(["userToken"]);
+
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-
-    try {
-      const response = await fetch("http://localhost:3001/auth/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, password }),
-      });
-
-      if (response.ok) {
-        const data = await response.json();
-        const token = data.token;
-        console.log("Token de autenticação:", token);
-        setIsLoggedIn(true);
-        navigate("/feed"); // Redireciona para a página "/post"
-      } else {
-        const errorData = await response.json();
-        setError(errorData.message);
-      }
-    } catch (error) {
-      console.error("Ocorreu um erro ao fazer login:", error);
-      setError("Ocorreu um erro ao fazer login. Por favor, tente novamente.");
+  useEffect(() => {
+    const userToken = cookies.userToken;
+    if (userToken) {
+      setIsLoggedIn(true);
     }
+  }, [cookies.userToken]);
+
+  useEffect(() => {
+    localStorage.clear();
+  }, []);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await loginSchema.validate({ email, password }, { abortEarly: false });
+      setError(null);
+      await login({ email, password });
+    } catch (error) {
+      if (error instanceof yup.ValidationError) {
+        setError(error.errors.join(" "));
+      } else {
+        setError(
+          "Ocorreu um erro ao fazer login. Por favor, tente novamente mais tarde."
+        );
+      }
+    }
+  };
+
+  const login = async (values) => {
+    const loggedInResponse = await fetch("http://localhost:3001/auth/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(values),
+    });
+    const loggedIn = await loggedInResponse.json();
+    if (loggedIn) {
+      dispatch(
+        setLogin({
+          user: loggedIn.user,
+          token: loggedIn.token,
+        })
+      );
+      setIsLoggedIn(true);
+      setCookie("userToken", loggedIn.token, { path: "/" });
+      navigate("/home");
+    } else {
+      setError(
+        "Credenciais inválidas. Por favor, verifique seu e-mail e senha."
+      );
+    }
+  };
+
+  const handleLogout = () => {
+    removeCookie("userToken", { path: "/" });
+    setIsLoggedIn(false);
   };
 
   return (
@@ -48,7 +88,7 @@ function Log() {
         <img src={Decoration} alt="Decoration"></img>
         <div className="log">
           <div className="log-container rect">
-            <h2>Log In</h2>
+            <h1>Log In</h1>
             <p>
               Não tem uma conta ainda? Clique em <a href="/sign">Sign In</a>
             </p>
@@ -75,7 +115,12 @@ function Log() {
                 <button type="submit">LOGAR</button>
               </form>
             )}
-            {isLoggedIn && <div>Você está logado.</div>}
+            {isLoggedIn && (
+              <div>
+                <p>Você está logado.</p>
+                <button onClick={handleLogout}>Logout</button>
+              </div>
+            )}
           </div>
         </div>
       </div>

@@ -50,7 +50,7 @@ function Sign() {
         <img src={Decoration} alt="Decoration"></img>
         <div className="sign">
           <div className="sign-container rect">
-            <h2>Sign In</h2>
+            <h1>Sign In</h1>
             <p>
               Já tem uma conta? Acesse agora clicando em <a href="/">Log In</a>
             </p>
@@ -71,7 +71,7 @@ function Sign() {
               />
               <Forms
                 nome="password"
-                label="password:"
+                label="Senha:"
                 tipo="password"
                 value={formData.password}
                 onChange={handleChange}

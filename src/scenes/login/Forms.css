@@ -1,13 +1,17 @@
 .login-forms {
-  border: 3px solid #6f6f6f;
-  border-radius: 60px;
+  border: 2px solid #191b1a;
+  border-radius: 10px;
   background-color: transparent;
   padding: 12px;
   margin-top: 10px;
   margin-bottom: 20px;
-  width: 94%;
+  width: 100%;
 }
 
 .label {
   margin-top: 30pxs;
+}
+
+.login-forms:focus {
+  background-color: #99b0cb;
 }

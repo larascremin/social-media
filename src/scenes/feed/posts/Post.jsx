@@ -1,54 +1,77 @@
-import "./Post.css";
-import { Publicacoes } from "../Data";
-import React, { useState } from "react";
-import LikeIcon from "../../../assets/like-icon.svg";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { setPosts } from "../../../state";
+import PostWidget from "./PostWidget";
 
-function Post(props) {
-  const [clicado, setClicado] = useState(false);
+// eslint-disable-next-line react/prop-types
+const PostList = ({ posts }) => {
+  return (
+    <>
+      {posts.map(({
+        _id,
+        userId,
+        username,
+        description,
+        location,
+        picturePath,
+        userPicturePath,
+        likes,
+        comments,
+      }) => (
+        <PostWidget
+          key={_id}
+          postId={_id}
+          postUserId={userId}
+          name={username}
+          description={description}
+          location={location}
+          picturePath={picturePath}
+          userPicturePath={userPicturePath}
+          likes={likes}
+          comments={comments}
+        />
+      ))}
+    </>
+  );
+};
 
-  const toggleClicado = () => {
-    setClicado(!clicado);
+// eslint-disable-next-line react/prop-types
+const Post = ({ userId, isProfile = false }) => {
+  const dispatch = useDispatch();
+  const posts = useSelector((state) => state.posts);
+  const token = useSelector((state) => state.token);
+
+  const getPosts = async () => {
+    const response = await fetch("http://localhost:3001/posts", {
+      method: "GET",
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    const data = await response.json();
+    dispatch(setPosts({ posts: data }));
   };
 
-  return (
-    <div className="post-map">
-      {Publicacoes.map((publicacao, index) => (
-        <div className="post" key={index}>
-          <div className="post-header">
-            <img src={publicacao.userPic} alt={publicacao.userName} />
-            <p>
-              {publicacao.userName}
-              <br />
-              <span>{publicacao.date}</span>
-            </p>
-          </div>
-          <p className="post-comment">{publicacao.content}</p>
-          <div className="post-picture-container">
-            <img
-              src={publicacao.imagePost}
-              className="post-picture"
-              alt="Post"
-            />
-          </div>
-          <div className="post-comment">
-            <button
-              onClick={toggleClicado}
-              className={clicado ? "like-clicado" : "like-icon"}
-              alt="Like"
-            >
-              <img src={LikeIcon} className="like-image" />
-            </button>
-            <form>
-              <input
-                className="input-comment"
-                placeholder="Comentar sobre a publicação..."
-              />
-            </form>
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-}
+  const getUserPosts = async () => {
+    const response = await fetch(
+      `http://localhost:3001/posts/${userId}/posts`,
+      {
+        method: "GET",
+        headers: { Authorization: `Bearer ${token}` },
+      }
+    );
+
+    const data = await response.json();
+    dispatch(setPosts({ posts: data }));
+  };
+
+  useEffect(() => {
+    if (isProfile) {
+      getUserPosts();
+    } else {
+      getPosts();
+    }
+  }, [isProfile]);
+
+  return <PostList posts={posts} />;
+};
 
 export default Post;

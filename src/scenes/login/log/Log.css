@@ -10,10 +10,14 @@
 }
 
 .forgot-password {
-  color: #6f6f6f;
+  color: #5b5b5b;
   margin-top: -10px;
 }
 
 .forgot-password a::after {
-  background-color: #6f6f6f;
+  background-color: #adbfd5;
+}
+
+.forgot-password a:hover::after {
+  background-color: #26569e;
 }

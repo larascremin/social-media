@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,500;0,700;1,400;1,500;1,700&display=swap");
 
+* {
+  font-family: "Poppins", sans-serif;
+}
+
 body {
   background-color: #d2d9df;
   margin: 0px;
@@ -60,4 +64,8 @@ a:hover:after {
   background-color: #26569e;
   position: absolute;
   width: 100%;
+}
+
+.app {
+  background-color: #d2d9df;
 }
