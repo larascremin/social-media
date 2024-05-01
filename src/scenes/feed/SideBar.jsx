@@ -39,21 +39,29 @@ const SideBar = ({ userId, picturePath }) => {
   return (
     <div className="side-bar">
       <div className="header-side-bar">
-        <h2>TechWave</h2>
+        <h2>Home</h2>
         <UserImage image={picturePath} />
         <p> @{username}</p>
       </div>
       <div className="line"></div>
-      <div>
+      <div className="side-bar-buttons">
         <a href="home" className="bar-buttons ">
           <img src={FeedIcon} alt="Feed" />
           <p>Feed</p>
         </a>
-        <a href="/profile" className="bar-buttons" onClick={() => navigate(`/profile/${userId}`)}>
+        <a
+          href="/profile"
+          className="bar-buttons"
+          onClick={() => navigate(`/profile/${userId}`)}
+        >
           <img src={ProfileIcon} alt="Perfil" />
           <p>Perfil</p>
         </a>
-        <a href="/suport" className="bar-buttons" onClick={() => navigate("/suport")}>
+        <a
+          href="/suport"
+          className="bar-buttons"
+          onClick={() => navigate("/suport")}
+        >
           <img src={SupportIcon} alt="Suporte" />
           <p>Suporte</p>
         </a>

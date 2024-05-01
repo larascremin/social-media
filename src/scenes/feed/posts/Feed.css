@@ -61,3 +61,8 @@
   border-radius: 20px;
   background-color: #739ebe;
 }
+
+.btn-postar {
+  color: white;
+  padding: 0px 8px;
+}

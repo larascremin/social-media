@@ -13,7 +13,6 @@ const Profile = () => {
   const { _id, picturePath } = useSelector((state) => state.user);
   const token = useSelector((state) => state.token);
 
-
   const handleUpdateProfile = async () => {
     try {
       const response = await fetch(`http://localhost:3001/users/${_id}`, {
@@ -22,13 +21,13 @@ const Profile = () => {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
         },
-        body: JSON.stringify({ newUsername }), 
+        body: JSON.stringify({ newUsername }),
       });
-  
+
       if (response.ok) {
         const updatedUser = await response.json();
         setUser(updatedUser);
-        setNewUsername(""); 
+        setNewUsername("");
       } else {
         console.error("Erro ao atualizar nome de usuário");
       }
@@ -42,7 +41,7 @@ const Profile = () => {
       <SideBar userId={_id} picturePath={picturePath} />
 
       <div className="feed-top"></div>
-      <div className="feed">
+      <div className="feed special">
         <h2 className="profile-title">Atualize seu perfil</h2>
         <div className="profile">
           <div className="picture-container">
@@ -53,13 +52,15 @@ const Profile = () => {
             <form className="profile-form">
               <Inputs
                 label="Alterar nome de usuário:"
-                value={newUsername} 
+                value={newUsername}
                 onChange={(e) => setNewUsername(e.target.value)}
               />
               <Inputs label="Alterar e-mail cadastrado:" />
               <Inputs label="Alterar senha:" />
             </form>
-            <button className="atualizar" onClick={handleUpdateProfile}>ATUALIZAR</button>
+            <button className="atualizar" onClick={handleUpdateProfile}>
+              ATUALIZAR
+            </button>
           </div>
         </div>
       </div>

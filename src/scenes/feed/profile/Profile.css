@@ -44,8 +44,13 @@
   height: 40px;
   border-radius: 20px;
   background-color: #739ebe;
+  padding: 8px 20px 14px;
 }
 
 .atualizar:hover {
   background-color: #26569e;
+}
+
+.special {
+  height: calc(100vh - 40px);
 }

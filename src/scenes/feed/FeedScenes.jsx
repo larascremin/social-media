@@ -2,7 +2,6 @@ import { BrowserRouter } from "react-router-dom";
 import SideBar from "./SideBar";
 import NewPost from "./posts/NewPost";
 import Profile from "./profile/Profile";
-import Log from "../login/log/Log";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 

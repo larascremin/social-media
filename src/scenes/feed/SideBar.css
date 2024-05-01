@@ -7,7 +7,7 @@
   background-color: #f4f4f4;
   width: 260px;
   height: 100vh;
-  padding: 60px 40px 0px;
+  padding: 50px 40px 0px;
   box-shadow: 2px 2px 20px rgba(0, 0, 20, 0.4);
   position: fixed;
   top: 0;
@@ -26,6 +26,14 @@
   align-items: center;
 }
 
+.header-side-bar h2 {
+  margin-bottom: 20px;
+}
+
+.header-side-bar p {
+  margin-top: 10px;
+}
+
 .line {
   height: 3px;
   background-color: #e0e0e0;
@@ -34,7 +42,7 @@
 }
 
 .bar-buttons {
-  margin: 10px;
+  margin: 10px 0px;
   padding: 10px;
   display: flex;
   align-items: center;
@@ -45,7 +53,7 @@
 }
 
 .bar-buttons:hover {
-  background-color: #e0e0e0;
+  background-color: #c7d8ed;
 }
 
 .bar-buttons img {
@@ -55,4 +63,8 @@
 
 .side-bar a::after {
   display: none;
+}
+
+.feed-top {
+  background-color: #26569e;
 }
